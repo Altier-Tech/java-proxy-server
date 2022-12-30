@@ -41,7 +41,7 @@ public class RequestHandler implements Runnable {
             String response = "HTTP/1.1 200 OK\r\n\r\n";
             clientOut.writeBytes(response);
             clientOut.flush();
-            
+
             clientOut.close();
             clientIn.close();
 
