@@ -20,7 +20,12 @@ public class PropertiesHandler {
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
                 .getResourceAsStream("application.properties");
-        config.load(inputStream);
+        try {
+            config.load(inputStream);
+        } catch (IOException e) {
+            log("Error loading " + propertyName + " properties: " + e.getMessage());
+            throw new IOException(e);
+        }
         assert inputStream != null;
         inputStream.close();
     }
