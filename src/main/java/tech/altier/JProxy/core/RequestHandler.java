@@ -1,5 +1,6 @@
 package tech.altier.JProxy.core;
 
+import com.sun.net.httpserver.Request;
 import tech.altier.JProxy.Main;
 
 import java.io.IOException;
@@ -38,6 +39,6 @@ public class RequestHandler implements Runnable {
 
     private void handleRequest(Socket clientSocket) {
         Main.logger.logln("Request received from " + clientSocket.getInetAddress().getHostAddress());
-        
+        new Thread(new Request(clientSocket)).start();
     }
 }
