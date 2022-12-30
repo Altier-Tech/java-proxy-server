@@ -34,9 +34,9 @@ public class Main {
     private static void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
-                        Thread.currentThread().getName() +
-                        "\tMainClass: \t" +
-                        message
+                Thread.currentThread().getName() +
+                "\tMainClass: \t" +
+                message
         );
     }
 }
