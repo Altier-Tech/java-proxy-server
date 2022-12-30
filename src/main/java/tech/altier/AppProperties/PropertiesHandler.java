@@ -42,7 +42,7 @@ public class PropertiesHandler {
      * @throws IOException if the properties file is not found or cannot be read
      */
     public PropertiesHandler loadProperties() throws IOException {
-        log("Loading " + propertyName + " properties...");
+        log("Loading " + propertyName + ".properties...");
         config = new Properties();
         InputStream inputStream = PropertiesHandler.class
                 .getClassLoader()
