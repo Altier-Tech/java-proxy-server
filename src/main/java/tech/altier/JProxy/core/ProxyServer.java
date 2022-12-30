@@ -6,6 +6,7 @@ public class ProxyServer {
     private static ProxyServer instance;
     private static int DEFAULT_PORT;
     private int port;
+    private Thread listener;
 
     static {
         try {
@@ -32,9 +33,12 @@ public class ProxyServer {
 
     public void start() {
         Main.logger.logln("Starting proxy server...");
+        listener = new RequestListener(port);
+        listener.start();
     }
 
     public void stop() {
         Main.logger.logln("Stopping proxy server...");
+        listener.interrupt();
     }
 }
