@@ -25,16 +25,19 @@ public class RequestHandler implements Runnable {
         Main.logger.logln("Listening started on port " + port);
 
         while (!Thread.currentThread().isInterrupted()) {
-            Socket clientSocket;
+            Socket clientSocket = null;
             try {
                 clientSocket = serverSocket.accept();
             } catch (Exception e) {
                 Main.logger.logln("Error while listening: " + e.getMessage());
             }
+            assert clientSocket != null;
             handleRequest(clientSocket);
         }
     }
 
     private void handleRequest(Socket clientSocket) {
+        Main.logger.logln("Request received from " + clientSocket.getInetAddress().getHostAddress());
+        
     }
 }
