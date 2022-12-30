@@ -9,6 +9,10 @@ public class Main {
     public static PropertiesHandler applicationProperties;
 
     public static void main(String[] args) {
+        loadApplicationProperties();
+    }
+
+    private static void loadApplicationProperties() {
         try {
             applicationProperties = new PropertiesHandler("application").loadProperties();
         } catch (IOException e) {
