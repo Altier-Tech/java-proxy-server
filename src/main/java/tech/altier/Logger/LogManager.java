@@ -49,6 +49,6 @@ public class LogManager {
     }
 
     public static String getMethodName() {
-        return Thread.currentThread().getStackTrace()[3].getMethodName();
+        return Thread.currentThread().getStackTrace()[4].getMethodName();
     }
 }
