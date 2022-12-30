@@ -20,7 +20,7 @@ public class Main {
         logger.logln("Starting proxy server...");
 
         // Exit
-//        storeApplicationProperties();
+        storeApplicationProperties();
     }
 
     private static void storeApplicationProperties() {
