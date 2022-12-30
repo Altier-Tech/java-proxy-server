@@ -16,15 +16,20 @@ class FileLogger implements Logger {
     public void logln(String message) {
         write(
                 Thread.currentThread().getName() +
-                        "\t" +
-                        message +
-                        "\n"
+                "\t" +
+                message +
+                "\n"
         );
     }
 
     @Override
     public void error(String message) {
-        write("FileLogger: " + message);
+        write(
+                Thread.currentThread().getName() +
+                "Error: " +
+                "\t" +
+                message
+        );
     }
 
     private void write(String message) {
