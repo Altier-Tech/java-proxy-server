@@ -1,5 +1,10 @@
 package tech.altier.Logger;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 class FileLogger implements Logger {
     private static final String LOG_FILE = "log.txt";
 
@@ -33,6 +38,14 @@ class FileLogger implements Logger {
     }
 
     private void write(String message) {
-        
+        System.out.println(  );
+        Path fileName = Path.of(
+                "logs\\" +
+                    new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) +
+                    LOG_FILE
+        );
+
+        // Writing into the file
+        Files.writeString(fileName, text);
     }
 }
