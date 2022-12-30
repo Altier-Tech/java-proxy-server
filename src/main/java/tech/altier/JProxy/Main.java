@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         // Init
 //        loadApplicationProperties();
-        logger = new LogManager(LoggerType.BOTH);
+        logger = new LogManager(LoggerType.CONSOLE);
 
         // Start the proxy server
         logger.logln("Starting proxy server...");
