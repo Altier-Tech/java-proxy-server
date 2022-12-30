@@ -17,6 +17,7 @@ public class Main {
         logger = new LogManager(LoggerType.CONSOLE);
 
         // Start the proxy server
+        logger.log("Starting proxy server...");
 
         // Exit
 //        storeApplicationProperties();
@@ -30,17 +31,8 @@ public class Main {
         try {
             applicationProperties = new PropertiesHandler("application").loadProperties();
         } catch (IOException e) {
-            log("Error loading application properties: " + e.getMessage());
+            logger.log("Error loading application properties: " + e.getMessage());
             // Create a new properties file
         }
-    }
-
-    private static void log(String message) {
-        System.out.println(
-                ThreadColor.ANSI_CYAN +
-                Thread.currentThread().getName() +
-                "\tMainClass: \t" +
-                message
-        );
     }
 }
