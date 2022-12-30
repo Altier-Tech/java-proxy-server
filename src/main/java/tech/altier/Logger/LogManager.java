@@ -38,10 +38,28 @@ public class LogManager {
     }
 
     static String getColor(String threadName) {
-        return colors[(threadName.hashCode() + getMethodName().hashCode()) % colors.length];
+        int hash = (threadName.hashCode() + getMethodName().hashCode() > 0) ?
+                (threadName.hashCode() + getMethodName().hashCode()) :
+                (-1*(threadName.hashCode() + getMethodName().hashCode()));
+        return colors[hash % colors.length];
     }
 
     public static String getMethodName() {
-        return Thread.currentThread().getStackTrace()[4].getMethodName();
+        StackTraceElement[] elements = Thread.currentThread().getStackTrace();
+        int count = 0;
+        for (StackTraceElement element : elements) {
+            if (
+                    element.getClassName().equalsIgnoreCase("tech.altier.Logger.LogManager")
+                    && (
+                            element.getMethodName().equalsIgnoreCase("log")
+                            || element.getMethodName().equalsIgnoreCase("logln")
+                    )
+            ) {
+                break;
+            }
+            count++;
+        }
+
+        return elements[count + 1].getClassName();
     }
 }
