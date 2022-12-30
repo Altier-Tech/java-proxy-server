@@ -1,6 +1,7 @@
 package tech.altier.JProxy.core;
 
 import tech.altier.JProxy.Main;
+import tech.altier.Thread.ThreadColor;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -16,7 +17,8 @@ public class RequestHandler implements Runnable {
 
     @Override
     public void run() {
-        Main.logger.logln("Handler started for request from " + clientSocket.getInetAddress().getHostAddress());
+        Main.logger.log("Handler started for request from ");
+        System.out.println(ThreadColor.ANSI_BLINK + clientSocket.getInetAddress().getHostAddress());
         Main.logger.logln(
                 clientSocket.getInetAddress().toString() + " : " +
                 clientSocket.getPort()
