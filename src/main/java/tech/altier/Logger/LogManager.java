@@ -2,6 +2,8 @@ package tech.altier.Logger;
 
 import tech.altier.Thread.ThreadColor;
 
+import java.util.stream.Collectors;
+
 public class LogManager {
     private static Logger logger = null;
     private static final String[] colors = {
@@ -10,7 +12,6 @@ public class LogManager {
             ThreadColor.ANSI_BLUE,
             ThreadColor.ANSI_GREEN,
             ThreadColor.ANSI_YELLOW,
-            ThreadColor.ANSI_BLACK,
             ThreadColor.ANSI_LIGHT_YELLOW,
     };
 
@@ -39,6 +40,11 @@ public class LogManager {
     }
 
     static String getColor(String threadName) {
-        return colors[threadName.hashCode() % colors.length];
+
+        return colors[
+                (threadName.hashCode() + Thread.currentThread().getStackTrace()[4]
+                                .getMethodName()
+                                .hashCode())
+                % colors.length];
     }
 }
