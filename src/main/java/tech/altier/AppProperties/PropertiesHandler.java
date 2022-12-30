@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesHandler {
+    private Properties config;
     private final String propertyName;
 
     public PropertiesHandler(String propertyName) {
