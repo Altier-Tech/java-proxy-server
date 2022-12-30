@@ -10,7 +10,6 @@ public class LogManager {
             ThreadColor.ANSI_BLUE,
             ThreadColor.ANSI_GREEN,
             ThreadColor.ANSI_YELLOW,
-            ThreadColor.ANSI_RED,
             ThreadColor.ANSI_BLACK
     };
 
@@ -25,6 +24,8 @@ public class LogManager {
     public LogManager() {
         this(LoggerType.CONSOLE);
     }
+
+
 
     static String getColor(String threadName) {
         return colors[threadName.hashCode() % colors.length];
