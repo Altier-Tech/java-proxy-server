@@ -99,9 +99,9 @@ public class PropertiesHandler {
     private static void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_YELLOW +
-                        Thread.currentThread().getName() +
-                        "\tPropertiesHandler: \t" +
-                        message
+                Thread.currentThread().getName() +
+                "\tPropertiesHandler: \t" +
+                message
         );
     }
 }
