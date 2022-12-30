@@ -16,14 +16,13 @@ public class PropertiesHandler {
 
     private void loadProperties() throws IOException {
         log("Loading  properties: " + propertyName);
-        Properties configuration = new Properties();
+        config = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
                 .getResourceAsStream("application.properties");
-        configuration.load(inputStream);
+        config.load(inputStream);
         assert inputStream != null;
         inputStream.close();
-        config = configuration;
     }
 
     private static void log(String message) {
