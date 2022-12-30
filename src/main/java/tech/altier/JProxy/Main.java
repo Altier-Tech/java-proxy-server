@@ -3,7 +3,6 @@ package tech.altier.JProxy;
 import tech.altier.AppProperties.PropertiesHandler;
 import tech.altier.Logger.LogManager;
 import tech.altier.Logger.LoggerType;
-import tech.altier.Thread.ThreadColor;
 
 import java.io.IOException;
 
