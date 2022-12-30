@@ -1,6 +1,6 @@
 package tech.altier.Logger;
 
-public interface Logger {
+interface Logger {
     void log(String message);
 
     void logln(String message);
