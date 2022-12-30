@@ -27,7 +27,6 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
             String request = clientIn.readLine();
-            Main.logger.logln("Request: " + request);
 
             String[] requestParts = request.split(" ");
             String method = requestParts[0];
