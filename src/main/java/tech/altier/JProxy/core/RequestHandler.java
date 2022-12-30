@@ -26,12 +26,7 @@ public class RequestHandler implements Runnable {
             DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-            String l = in.readLine();
-            while (l != null) {
-                l = in.readLine();
-                Main.logger.logln(l);
-                if (l.isEmpty()) break;
-            }
+            String request = clientIn.readLine();
         } catch (Exception e) {
             Main.logger.logln(e.getMessage());
         }
