@@ -34,4 +34,7 @@ public class RequestHandler implements Runnable {
             handleRequest(clientSocket);
         }
     }
+
+    private void handleRequest(Socket clientSocket) {
+    }
 }
