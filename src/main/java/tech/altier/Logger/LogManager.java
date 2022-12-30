@@ -47,4 +47,8 @@ public class LogManager {
                                 .hashCode()
                 ) % colors.length];
     }
+
+    public static String getMethodName() {
+        return Thread.currentThread().getStackTrace()[3].getMethodName();
+    }
 }
