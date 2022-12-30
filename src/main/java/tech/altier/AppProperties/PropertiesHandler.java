@@ -20,7 +20,7 @@ public class PropertiesHandler {
         config = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
-                .getResourceAsStream("application.properties");
+                .getResourceAsStream(propertyName + ".properties");
         try {
             config.load(inputStream);
         } catch (IOException e) {
@@ -31,10 +31,11 @@ public class PropertiesHandler {
         inputStream.close();
     }
 
-    public static void storeProperties() {
+    public void storeProperties() {
         log("Saving application properties...");
-        try (FileOutputStream outputStream = new FileOutputStream("src\\main\\resources\\application.properties")) {
-            conf.store(outputStream, null);
+        try (FileOutputStream outputStream = new FileOutputStream
+                ("src\\main\\resources\\" + propertyName + ".properties")) {
+            config.store(outputStream, null);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
