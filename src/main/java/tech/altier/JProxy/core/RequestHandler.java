@@ -1,9 +1,5 @@
 package tech.altier.JProxy.core;
 
-import com.sun.net.httpserver.Request;
-import tech.altier.JProxy.Main;
-
-import java.io.IOException;
 import java.net.Socket;
 
 public class RequestHandler implements Runnable {
@@ -15,6 +11,6 @@ public class RequestHandler implements Runnable {
 
     @Override
     public void run() {
-        
+
     }
 }
