@@ -21,8 +21,10 @@ public class PropertiesHandler {
     private final String propertyName;
 
     /**
-     * This constructor is used to create an instance of the PropertiesHandler class for
-     * a given properties file.
+     * This constructor is used to create an instance of the PropertiesHandler class
+     * for a given properties file.
+     * The propertyName String parameter should be the name of the properties file
+     * without the file extension.
      * @param propertyName name of the properties file
      */
     public PropertiesHandler(String propertyName) {
