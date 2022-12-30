@@ -4,6 +4,7 @@ import tech.altier.JProxy.Main;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 public class RequestHandler implements Runnable {
     private final ServerSocket serverSocket;
@@ -24,11 +25,13 @@ public class RequestHandler implements Runnable {
         Main.logger.logln("Listening started on port " + port);
 
         while (!Thread.currentThread().isInterrupted()) {
+            Socket clientSocket;
             try {
-                serverSocket.accept();
+                clientSocket = serverSocket.accept();
             } catch (Exception e) {
                 Main.logger.logln("Error while listening: " + e.getMessage());
             }
+            
         }
     }
 }
