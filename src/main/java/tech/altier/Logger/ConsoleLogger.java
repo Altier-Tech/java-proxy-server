@@ -10,7 +10,10 @@ public class ConsoleLogger implements Logger {
 
     @Override
     public void logln(String message) {
-        System.out.println(Thread.currentThread().getName() + "\t" + message);
+        System.out.println(
+                Thread.currentThread().getName() +
+                "\t" +
+                message);
     }
 
     @Override
