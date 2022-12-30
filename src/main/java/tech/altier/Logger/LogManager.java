@@ -4,7 +4,7 @@ import tech.altier.Thread.ThreadColor;
 
 public class LogManager {
     private static final Logger logger;
-    private static String[] colors = {
+    private static final String[] colors = {
             ThreadColor.ANSI_CYAN,
             ThreadColor.ANSI_PURPLE,
             ThreadColor.ANSI_BLUE,
