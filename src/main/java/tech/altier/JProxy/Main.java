@@ -9,7 +9,13 @@ public class Main {
     public static PropertiesHandler applicationProperties;
 
     public static void main(String[] args) {
+        // Init
         loadApplicationProperties();
+
+        // Start the proxy server
+
+        // Exit
+        storeApplicationProperties();
     }
 
     private static void loadApplicationProperties() {
