@@ -31,7 +31,7 @@ public class RequestHandler implements Runnable {
             } catch (Exception e) {
                 Main.logger.logln("Error while listening: " + e.getMessage());
             }
-            
+            handleRequest(clientSocket);
         }
     }
 }
