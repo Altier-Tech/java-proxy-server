@@ -32,7 +32,7 @@ public class LogManager {
         this(LoggerType.CONSOLE);
     }
 
-    public static String getColor() {
-
+    static String getColor(String threadName) {
+        return colors[threadName.hashCode() % colors.length];
     }
 }
