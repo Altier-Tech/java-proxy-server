@@ -7,8 +7,10 @@ import java.net.ServerSocket;
 
 public class RequestHandler implements Runnable {
     private final ServerSocket serverSocket;
+    private final int port;
 
     public RequestHandler(int port) {
+        this.port = port;
         try {
             serverSocket = new ServerSocket(port);
         } catch (IOException e) {
