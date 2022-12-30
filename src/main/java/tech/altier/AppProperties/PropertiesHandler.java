@@ -20,6 +20,11 @@ public class PropertiesHandler {
     private Properties config;
     private final String propertyName;
 
+    /**
+     * This constructor is used to create an instance of the PropertiesHandler class for
+     * a given properties file.
+     * @param propertyName name of the properties file
+     */
     public PropertiesHandler(String propertyName) {
         this.propertyName = propertyName;
     }
