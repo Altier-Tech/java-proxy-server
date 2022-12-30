@@ -40,8 +40,9 @@ public class LogManager {
     }
 
     static String getColor(String threadName) {
-        return colors[
-                (threadName.hashCode() + Thread.currentThread().getStackTrace()[4]
+        return colors[(
+                        threadName.hashCode() +
+                                Thread.currentThread().getStackTrace()[4]
                                 .getMethodName()
                                 .hashCode()
                 ) % colors.length];
