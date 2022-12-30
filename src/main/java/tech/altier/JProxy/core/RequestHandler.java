@@ -15,12 +15,6 @@ public class RequestHandler implements Runnable {
 
     @Override
     public void run() {
-        try {
-            Request request = new Request(clientSocket.getInputStream());
-            Response response = new Response(clientSocket.getOutputStream());
-            response.send(request);
-        } catch (IOException e) {
-            Main.logger.logln("Error handling request: " + e.getMessage());
-        }
+        
     }
 }
