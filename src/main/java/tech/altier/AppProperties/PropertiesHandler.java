@@ -7,11 +7,14 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesHandler {
+    private String propertyName;
+
     public PropertiesHandler(String propertyName) {
+        this.propertyName = propertyName;
     }
 
     private static Properties loadProperties() throws IOException {
-        log("Loading application properties...");
+        log("Loading  properties: " + propertyName);
         Properties configuration = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
