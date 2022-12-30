@@ -94,7 +94,7 @@ public class PropertiesHandler {
      * @param value the value of the property
      */
     public void set(String key, String value) {
-        log("Setting " + key + " in " + propertyName + " properties...");
+        log("Setting " + key + " in " + propertyName + ".properties");
         config.setProperty(key, value);
     }
 
