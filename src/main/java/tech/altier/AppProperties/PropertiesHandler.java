@@ -56,6 +56,12 @@ public class PropertiesHandler {
         return this;
     }
 
+    /**
+     * This method is used to save the properties back to the properties file.
+     * This method should be called after all the get / set methods are called
+     * and at the end of the program.
+     * @throws RuntimeException if the properties file is not found or cannot be written
+     */
     public void storeProperties() {
         log("Saving application properties...");
         try (FileOutputStream outputStream = new FileOutputStream
