@@ -66,12 +66,12 @@ public class PropertiesHandler {
      * @throws RuntimeException if the properties file is not found or cannot be written
      */
     public void storeProperties() {
-        log("Saving " + propertyName + " properties...");
+        log("Saving " + propertyName + ".properties...");
         try (FileOutputStream outputStream = new FileOutputStream
                 ("src\\main\\resources\\" + propertyName + ".properties")) {
             config.store(outputStream, null);
         } catch (IOException e) {
-            log("Error saving " + propertyName + " properties: " + e.getMessage());
+            log("Error saving " + propertyName + ".properties: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
