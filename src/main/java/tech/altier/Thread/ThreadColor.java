@@ -1,5 +1,11 @@
 package tech.altier.Thread;
 
+/**
+ * @author Dilshan Karunarathne
+ * @version 2.0
+ * @since 2020-10-01
+ * This class is used to set the color of the console output.
+ */
 public class ThreadColor {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
