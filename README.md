@@ -1,2 +1,2 @@
 # JProxy
-A simple proxy server implemented using Java.
+A proxy server written in Java.
