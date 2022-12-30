@@ -15,8 +15,8 @@ public class RequestHandler implements Runnable {
     public void run() {
         Main.logger.logln("Handler started for request from " + clientSocket.getInetAddress().getHostAddress());
         Main.logger.logln(
-                clientSocket.getInetAddress().toString() + " " +
-                clientSocket.getPort() 
+                clientSocket.getInetAddress().toString() + " : " +
+                clientSocket.getPort()
         );
     }
 }
