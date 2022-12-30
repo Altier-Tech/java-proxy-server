@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class RequestHandler implements Runnable {
+public class Listener implements Runnable {
     private final ServerSocket serverSocket;
     private final int port;
 
-    public RequestHandler(int port) {
+    public Listener(int port) {
         this.port = port;
         try {
             serverSocket = new ServerSocket(port);
