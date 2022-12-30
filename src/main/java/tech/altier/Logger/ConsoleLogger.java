@@ -2,7 +2,7 @@ package tech.altier.Logger;
 
 import tech.altier.Thread.ThreadColor;
 
-public class ConsoleLogger implements Logger {
+class ConsoleLogger implements Logger {
     @Override
     public void log(String message) {
         System.out.print(
