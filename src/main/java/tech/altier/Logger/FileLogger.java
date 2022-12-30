@@ -1,5 +1,6 @@
 package tech.altier.Logger;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
@@ -44,7 +45,11 @@ class FileLogger implements Logger {
                     LOG_FILE
         );
 
-        // Writing into the file
-        Files.writeString(fileName, message);
+        try {
+            Files.writeString(fileName, message);
+        } catch (IOException e) {
+            System.out.println("Error writing to log file: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }
