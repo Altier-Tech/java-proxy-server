@@ -23,8 +23,8 @@ public class RequestHandler implements Runnable {
         );
 
         try {
-            DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
 
             String request = clientIn.readLine();
 
