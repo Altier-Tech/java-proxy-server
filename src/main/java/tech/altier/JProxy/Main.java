@@ -9,6 +9,7 @@ import java.io.IOException;
 public class Main {
     public static LogManager logger;
     public static PropertiesHandler applicationProperties;
+    public static ProxyServer server;
 
     public static void main(String[] args) {
         // Init
@@ -16,7 +17,7 @@ public class Main {
         loadApplicationProperties();
 
         // Start the proxy server
-        Server server = new Server(8080).start();
+
 
         // Exit
         storeApplicationProperties();
