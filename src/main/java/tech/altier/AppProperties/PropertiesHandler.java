@@ -15,6 +15,7 @@ import java.util.Properties;
  * @author Dilshan Karunarathne
  * @version 2.0
  * @since 2020-10-01
+ * @see Properties
  */
 public class PropertiesHandler {
     private Properties config;
