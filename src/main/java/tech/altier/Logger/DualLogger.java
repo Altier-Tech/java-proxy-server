@@ -1,4 +1,4 @@
 package tech.altier.Logger;
 
-public class DualLogger {
+public class DualLogger implements Logger {
 }
