@@ -16,7 +16,7 @@ public class Main {
         loadApplicationProperties();
 
         // Start the proxy server
-        logger.logln("Starting proxy server...");
+        
 
         // Exit
         storeApplicationProperties();
