@@ -37,6 +37,7 @@ public class PropertiesHandler {
                 ("src\\main\\resources\\" + propertyName + ".properties")) {
             config.store(outputStream, null);
         } catch (IOException e) {
+            log("Error saving " + propertyName + " properties: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
