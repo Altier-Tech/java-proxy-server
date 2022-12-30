@@ -82,6 +82,11 @@ public class PropertiesHandler {
         return config.getProperty(key);
     }
 
+    /**
+     * This method is used to set a property value to the loaded properties.
+     * @param key the key of the property
+     * @param value the value of the property
+     */
     public void set(String key, String value) {
         log("Setting " + key + " in " + propertyName + " properties...");
         config.setProperty(key, value);
