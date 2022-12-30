@@ -7,5 +7,4 @@ public interface Logger {
     void error(String message);
     void error(String message, String threadName);
     void error(String message, String threadName, String className);
-    
 }
