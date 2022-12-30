@@ -17,8 +17,11 @@ class ConsoleLogger implements Logger {
     public void logln(String message) {
         System.out.println(
                 LogManager.getColor(Thread.currentThread().getName()) +
+                "T(" +
                 Thread.currentThread().getName() +
-                "\t" +
+                ")\tM(" +
+                LogManager.getMethodName() +
+                ")\t" +
                 message
         );
     }
