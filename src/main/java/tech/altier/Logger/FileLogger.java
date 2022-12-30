@@ -40,9 +40,9 @@ class FileLogger implements Logger {
 
     private void write(String message) {
         Path fileName = Path.of(
-                "logs\\" +
-                    new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) +
-                    LOG_FILE
+            "logs\\" +
+                new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) +
+                LOG_FILE
         );
 
         try {
