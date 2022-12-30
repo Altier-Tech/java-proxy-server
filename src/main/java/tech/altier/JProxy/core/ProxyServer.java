@@ -5,7 +5,7 @@ import tech.altier.JProxy.Main;
 public class ProxyServer {
     private static ProxyServer instance;
     private static int DEFAULT_PORT;
-    private int port;
+    private final int port;
     private Thread listener;
 
     static {
