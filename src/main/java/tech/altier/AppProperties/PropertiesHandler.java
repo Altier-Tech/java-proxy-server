@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesHandler {
-    private String propertyName;
+    private final String propertyName;
 
     public PropertiesHandler(String propertyName) {
         this.propertyName = propertyName;
