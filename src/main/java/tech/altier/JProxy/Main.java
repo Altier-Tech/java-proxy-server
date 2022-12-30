@@ -1,6 +1,7 @@
 package tech.altier.JProxy;
 
 import tech.altier.AppProperties.PropertiesHandler;
+import tech.altier.JProxy.core.ProxyServer;
 import tech.altier.Logger.LogManager;
 import tech.altier.Logger.LoggerType;
 
@@ -17,7 +18,8 @@ public class Main {
         loadApplicationProperties();
 
         // Start the proxy server
-
+        server = ProxyServer.getInstance();
+        server.start();
 
         // Exit
         storeApplicationProperties();
