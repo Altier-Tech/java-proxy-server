@@ -18,7 +18,7 @@ public class PropertiesHandler {
     public void loadProperties() throws IOException {
         log("Loading  properties: " + propertyName);
         config = new Properties();
-        InputStream inputStream = PropertiesLoader.class
+        InputStream inputStream = PropertiesHandler.class
                 .getClassLoader()
                 .getResourceAsStream(propertyName + ".properties");
         try {
