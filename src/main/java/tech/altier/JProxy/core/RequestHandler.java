@@ -3,6 +3,7 @@ package tech.altier.JProxy.core;
 import tech.altier.JProxy.Main;
 
 import java.net.Socket;
+import java.net.SocketException;
 
 public class RequestHandler implements Runnable {
     private final Socket clientSocket;
@@ -14,12 +15,9 @@ public class RequestHandler implements Runnable {
     @Override
     public void run() {
         Main.logger.logln("Handler started for request from " + clientSocket.getInetAddress().getHostAddress());
-
         Main.logger.logln(
                 clientSocket.getInetAddress().toString() + " " +
-                clientSocket.getPort() + " " +
-                clientSocket.getLocalAddress().toString() + " " +
-                clientSocket.getLocalPort()
+                clientSocket.getPort() + " "
         );
     }
 }
