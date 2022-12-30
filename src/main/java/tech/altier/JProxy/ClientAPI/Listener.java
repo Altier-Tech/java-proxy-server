@@ -1,4 +1,4 @@
 package tech.altier.JProxy.ClientAPI;
 
-public class Listener {
+public class Listener implements Runnable {
 }
