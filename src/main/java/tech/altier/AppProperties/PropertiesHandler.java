@@ -42,7 +42,7 @@ public class PropertiesHandler {
      * @throws IOException if the properties file is not found or cannot be read
      */
     public PropertiesHandler loadProperties() throws IOException {
-        log("Loading  properties: " + propertyName);
+        log("Loading " + propertyName + " properties...");
         config = new Properties();
         InputStream inputStream = PropertiesHandler.class
                 .getClassLoader()
@@ -50,7 +50,7 @@ public class PropertiesHandler {
         try {
             config.load(inputStream);
         } catch (IOException e) {
-            log("Error loading " + propertyName + " properties: " + e.getMessage());
+            log("Error loading " + propertyName + ".properties: " + e.getMessage());
             throw new IOException(e);
         }
         assert inputStream != null;
