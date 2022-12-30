@@ -85,6 +85,8 @@ public class PropertiesHandler {
 
     /**
      * This method is used to set a property value to the loaded properties.
+     * If the key already exists, the value will be overwritten. Otherwise, a new
+     * property will be created.
      * @param key the key of the property
      * @param value the value of the property
      */
