@@ -1,14 +1,25 @@
 package tech.altier.Logger;
 
 class FileLogger implements Logger {
+    private static final String LOG_FILE = "log.txt";
+
     @Override
     public void log(String message) {
-        write("FileLogger: " + message);
+        write(
+                Thread.currentThread().getName() +
+                "\t" +
+                message
+        );
     }
 
     @Override
     public void logln(String message) {
-        write("FileLogger: " + message + "/n");
+        write(
+                Thread.currentThread().getName() +
+                        "\t" +
+                        message +
+                        "\n"
+        );
     }
 
     @Override
