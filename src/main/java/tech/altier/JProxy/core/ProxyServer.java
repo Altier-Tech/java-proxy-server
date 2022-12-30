@@ -4,8 +4,18 @@ import tech.altier.JProxy.Main;
 
 public class ProxyServer {
     private static ProxyServer instance;
-    private static int DEFAULT_PORT = 8080;
+    private static int DEFAULT_PORT;
     private int port;
+
+    static {
+        try {
+            DEFAULT_PORT = Integer.valueOf(Main.applicationProperties.get("port"));
+        } catch (Exception e) {
+            Main.logger.logln("Error loading default port from application properties: " + e.getMessage());
+            Main.logger.logln("Using default port 8080");
+            DEFAULT_PORT = 8080;
+        }
+    }
 
     private ProxyServer(int port) {
         this.port = port;
