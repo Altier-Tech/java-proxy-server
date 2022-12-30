@@ -47,13 +47,13 @@ public class PropertiesHandler {
     }
 
     public void set(String key, String value) {
-        log("Setting " + key + " in application properties...");
+        log("Setting " + key + " in " + propertyName + " properties...");
         config.setProperty(key, value);
     }
 
     private static void log(String message) {
         System.out.println(
-                ThreadColor.ANSI_CYAN +
+                ThreadColor.ANSI_YELLOW +
                         Thread.currentThread().getName() +
                         "\tPropertiesHandler: \t" +
                         message
