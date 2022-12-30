@@ -9,7 +9,7 @@ public class ProxyServer {
 
     static {
         try {
-            DEFAULT_PORT = Integer.valueOf(Main.applicationProperties.get("port"));
+            DEFAULT_PORT = Integer.parseInt(Main.applicationProperties.get("port"));
         } catch (Exception e) {
             Main.logger.logln("Error loading default port from application properties: " + e.getMessage());
             Main.logger.logln("Using default port 8080");
