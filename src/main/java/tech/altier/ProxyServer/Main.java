@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            applicationProperties = new PropertiesHandler("application");
+            applicationProperties = new PropertiesHandler("application").loadProperties();
         } catch (IOException e) {
             log("Error loading application properties: " + e.getMessage());
             // Create a new properties file
