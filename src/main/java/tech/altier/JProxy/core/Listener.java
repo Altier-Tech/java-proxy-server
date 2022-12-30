@@ -1,6 +1,5 @@
 package tech.altier.JProxy.core;
 
-import com.sun.net.httpserver.Request;
 import tech.altier.JProxy.Main;
 
 import java.io.IOException;
