@@ -10,15 +10,15 @@ public class LogManager {
             ThreadColor.ANSI_BLUE,
             ThreadColor.ANSI_GREEN,
             ThreadColor.ANSI_YELLOW,
-            ThreadColor.ANSI_BLACK
-    ANSI_LIGHT_YELLOW,
-    ANSI_YELLOW_BACKGROUND,
-     ANSI_WHITE ,
-     ANSI_BOLD ,
-     ANSI_UNBOLD ,
-     ANSI_UNDERLINE ,
-     ANSI_STOP_UNDERLINE ,
-    ANSI_BLINK
+            ThreadColor.ANSI_BLACK,
+            ThreadColor.ANSI_LIGHT_YELLOW,
+            ThreadColor.ANSI_YELLOW_BACKGROUND,
+            ThreadColor.ANSI_WHITE ,
+            ThreadColor.ANSI_BOLD ,
+            ThreadColor.ANSI_UNBOLD ,
+            ThreadColor.ANSI_UNDERLINE ,
+            ThreadColor.ANSI_STOP_UNDERLINE ,
+            ThreadColor.ANSI_BLINK
     };
 
     public LogManager(LoggerType type) {
