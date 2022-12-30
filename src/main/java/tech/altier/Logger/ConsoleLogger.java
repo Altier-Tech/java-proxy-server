@@ -13,7 +13,7 @@ public class ConsoleLogger implements Logger {
 
     @Override
     public void log(String message, String threadName, String className) {
-
+        System.out.print(threadName + "\t" + className + ": \t" + message);
     }
 
     @Override
