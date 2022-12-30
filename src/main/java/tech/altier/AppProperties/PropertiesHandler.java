@@ -34,7 +34,7 @@ public class PropertiesHandler {
     /**
      * This method is used to load the properties from the properties file into the
      * memory. This method should be called before any get / set methods are called.
-     * This method can be called, chained with the constructor.
+     * This method can be called, chained with the constructor, or called separately.
      * @return the PropertiesHandler instance with the loaded properties
      * @throws IOException if the properties file is not found or cannot be read
      */
