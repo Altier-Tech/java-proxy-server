@@ -2,6 +2,7 @@ package tech.altier.AppProperties;
 
 import tech.altier.Thread.ThreadColor;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -28,6 +29,15 @@ public class PropertiesHandler {
         }
         assert inputStream != null;
         inputStream.close();
+    }
+
+    public static void storeProperties() {
+        log("Saving application properties...");
+        try (FileOutputStream outputStream = new FileOutputStream("src\\main\\resources\\application.properties")) {
+            conf.store(outputStream, null);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void log(String message) {
