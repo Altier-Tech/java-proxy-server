@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 class FileLogger implements Logger {
-    private static final String LOG_FILE = "log.txt";
+    private static final String LOG_FILE = "_log.txt";
 
     @Override
     public void log(String message) {
@@ -44,6 +44,7 @@ class FileLogger implements Logger {
                 new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) +
                 LOG_FILE
         );
+
 
         try {
             Files.writeString(fileName, message);
