@@ -26,7 +26,7 @@ public class PropertiesHandler {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
                         Thread.currentThread().getName() +
-                        "\tPropertiesLoader: \t" +
+                        "\tPropertiesHandler: \t" +
                         message
         );
     }
