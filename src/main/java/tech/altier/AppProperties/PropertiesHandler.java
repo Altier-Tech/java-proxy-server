@@ -73,6 +73,11 @@ public class PropertiesHandler {
         }
     }
 
+    /**
+     * This method is used to get a property value from the loaded properties.
+     * @param key the key of the property
+     * @return the value of the property
+     */
     public String get(String key) {
         return config.getProperty(key);
     }
