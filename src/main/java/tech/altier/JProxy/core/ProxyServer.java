@@ -33,7 +33,7 @@ public class ProxyServer {
 
     public void start() {
         Main.logger.logln("Starting proxy server...");
-        listener = new RequestListener(port);
+        listener = new RequestHandler(port);
         listener.start();
     }
 
