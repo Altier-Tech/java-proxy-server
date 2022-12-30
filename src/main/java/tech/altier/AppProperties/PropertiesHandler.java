@@ -1,10 +1,12 @@
 package tech.altier.AppProperties;
 
+import tech.altier.JProxy.Main;
 import tech.altier.Thread.ThreadColor;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -97,11 +99,6 @@ public class PropertiesHandler {
     }
 
     private static void log(String message) {
-        System.out.println(
-                ThreadColor.ANSI_YELLOW +
-                Thread.currentThread().getName() +
-                "\tPropertiesHandler: \t" +
-                message
-        );
+        Main.logger.log(message);
     }
 }
