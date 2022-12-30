@@ -18,6 +18,10 @@ public class Main {
         storeApplicationProperties();
     }
 
+    private static void storeApplicationProperties() {
+        applicationProperties.storeProperties();
+    }
+
     private static void loadApplicationProperties() {
         try {
             applicationProperties = new PropertiesHandler("application").loadProperties();
