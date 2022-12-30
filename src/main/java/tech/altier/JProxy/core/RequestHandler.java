@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 public class RequestHandler implements Runnable {
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
 
     public RequestHandler(int port) {
         try {
