@@ -6,7 +6,7 @@ public class ConsoleLogger implements Logger {
     @Override
     public void log(String message) {
         System.out.print(
-                LogManager.getColor() +
+                LogManager.getColor(Thread.currentThread().getName()) +
                 Thread.currentThread().getName() +
                 "\t" +
                 message
@@ -16,7 +16,7 @@ public class ConsoleLogger implements Logger {
     @Override
     public void logln(String message) {
         System.out.println(
-                LogManager.getColor() +
+                LogManager.getColor(Thread.currentThread().getName()) +
                 Thread.currentThread().getName() +
                 "\t" +
                 message
