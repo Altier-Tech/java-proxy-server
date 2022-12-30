@@ -38,7 +38,6 @@ class FileLogger implements Logger {
     }
 
     private void write(String message) {
-        System.out.println(  );
         Path fileName = Path.of(
                 "logs\\" +
                     new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()) +
@@ -46,6 +45,6 @@ class FileLogger implements Logger {
         );
 
         // Writing into the file
-        Files.writeString(fileName, text);
+        Files.writeString(fileName, message);
     }
 }
