@@ -10,7 +10,7 @@ class ConsoleLogger implements Logger {
                 "T(" +
                 Thread.currentThread().getName() +
                 ")\tM(" +
-                LogManager.getMethodName() +
+                LogManager.getClassName() +
                 ")\t" +
                 message
         );
@@ -23,7 +23,7 @@ class ConsoleLogger implements Logger {
                 "T(" +
                 Thread.currentThread().getName() +
                 ")\tM(" +
-                LogManager.getMethodName() +
+                LogManager.getClassName() +
                 ")\t" +
                 message
         );
