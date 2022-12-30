@@ -7,6 +7,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * This class is used to handle properties files.
+ * An instance of this class can load all the written properties into a memory and
+ * the get / set methods provided can be applied on those properties. Then it can
+ * save the properties back to the file for later retrieval.
+ * @author Dilshan Karunarathne
+ * @version 2.0
+ * @since 2020-10-01
+ */
 public class PropertiesHandler {
     private Properties config;
     private final String propertyName;
