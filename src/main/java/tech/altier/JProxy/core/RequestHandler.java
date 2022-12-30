@@ -27,6 +27,25 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
             String request = clientIn.readLine();
+            Main.logger.logln("Request: " + request);
+
+            String[] requestParts = request.split(" ");
+            String method = requestParts[0];
+            String url = requestParts[1];
+            String version = requestParts[2];
+
+            Main.logger.logln("Method: " + method);
+            Main.logger.logln("URL: " + url);
+            Main.logger.logln("Version: " + version);
+
+            String response = "HTTP/1.1 200 OK\r\n\r\n";
+            clientOut.writeBytes(response);
+            clientOut.flush();
+            
+            clientOut.close();
+            clientIn.close();
+
+            Main.logger.logln("Response sent");
         } catch (Exception e) {
             Main.logger.logln(e.getMessage());
         }
