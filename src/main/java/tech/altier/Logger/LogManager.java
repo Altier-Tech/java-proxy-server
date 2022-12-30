@@ -3,7 +3,7 @@ package tech.altier.Logger;
 import tech.altier.Thread.ThreadColor;
 
 public class LogManager {
-    private static final Logger logger;
+    private static Logger logger = null;
     private static final String[] colors = {
             ThreadColor.ANSI_CYAN,
             ThreadColor.ANSI_PURPLE,
