@@ -38,13 +38,13 @@ public class LogManager {
     }
 
     static String getColor(String threadName) {
-        int hash = (threadName.hashCode() + getMethodName().hashCode() > 0) ?
-                (threadName.hashCode() + getMethodName().hashCode()) :
-                (-1*(threadName.hashCode() + getMethodName().hashCode()));
+        int hash = (threadName.hashCode() + getClassName().hashCode() > 0) ?
+                (threadName.hashCode() + getClassName().hashCode()) :
+                (-1*(threadName.hashCode() + getClassName().hashCode()));
         return colors[hash % colors.length];
     }
 
-    public static String getMethodName() {
+    public static String getClassName() {
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
         int count = 0;
         for (StackTraceElement element : elements) {
