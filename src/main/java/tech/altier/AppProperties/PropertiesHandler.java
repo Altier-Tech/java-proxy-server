@@ -75,6 +75,7 @@ public class PropertiesHandler {
 
     /**
      * This method is used to get a property value from the loaded properties.
+     * It returns null if the property is not found.
      * @param key the key of the property
      * @return the value of the property
      */
