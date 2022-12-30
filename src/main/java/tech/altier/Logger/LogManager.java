@@ -12,13 +12,6 @@ public class LogManager {
             ThreadColor.ANSI_YELLOW,
             ThreadColor.ANSI_BLACK,
             ThreadColor.ANSI_LIGHT_YELLOW,
-            ThreadColor.ANSI_YELLOW_BACKGROUND,
-            ThreadColor.ANSI_WHITE ,
-            ThreadColor.ANSI_BOLD ,
-            ThreadColor.ANSI_UNBOLD ,
-            ThreadColor.ANSI_UNDERLINE ,
-            ThreadColor.ANSI_STOP_UNDERLINE ,
-            ThreadColor.ANSI_BLINK
     };
 
     public LogManager(LoggerType type) {
