@@ -1,21 +1,25 @@
 package tech.altier.JProxy;
 
 import tech.altier.AppProperties.PropertiesHandler;
+import tech.altier.Logger.LogManager;
+import tech.altier.Logger.LoggerType;
 import tech.altier.Thread.ThreadColor;
 
 import java.io.IOException;
 
 public class Main {
+    public static LogManager logger;
     public static PropertiesHandler applicationProperties;
 
     public static void main(String[] args) {
         // Init
-        loadApplicationProperties();
+//        loadApplicationProperties();
+        logger = new LogManager(LoggerType.CONSOLE);
 
         // Start the proxy server
 
         // Exit
-        storeApplicationProperties();
+//        storeApplicationProperties();
     }
 
     private static void storeApplicationProperties() {
