@@ -22,7 +22,7 @@ public class ProxyServer {
     }
 
     private ProxyServer() {
-        this(8080);
+        this(DEFAULT_PORT);
     }
 
     public static ProxyServer getInstance() {
