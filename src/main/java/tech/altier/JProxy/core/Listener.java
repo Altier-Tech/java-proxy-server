@@ -39,6 +39,6 @@ public class Listener implements Runnable {
 
     private void handleRequest(Socket clientSocket) {
         Main.logger.logln("Request received from " + clientSocket.getInetAddress().getHostAddress());
-        new Thread(new Request(clientSocket)).start();
+        new Thread(new RequestHandler(clientSocket)).start();
     }
 }
