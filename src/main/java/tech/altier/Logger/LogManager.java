@@ -2,8 +2,6 @@ package tech.altier.Logger;
 
 import tech.altier.Thread.ThreadColor;
 
-import java.util.stream.Collectors;
-
 public class LogManager {
     private static Logger logger = null;
     private static final String[] colors = {
