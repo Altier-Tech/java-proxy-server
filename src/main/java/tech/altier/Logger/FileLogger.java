@@ -33,6 +33,6 @@ class FileLogger implements Logger {
     }
 
     private void write(String message) {
-        // Write to file
+        
     }
 }
