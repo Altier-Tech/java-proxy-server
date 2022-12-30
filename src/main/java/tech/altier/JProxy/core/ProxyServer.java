@@ -1,7 +1,10 @@
 package tech.altier.JProxy.core;
 
+import tech.altier.JProxy.Main;
+
 public class ProxyServer {
     private static ProxyServer instance;
+    private static int DEFAULT_PORT = 8080;
     private int port;
 
     private ProxyServer(int port) {
@@ -18,10 +21,10 @@ public class ProxyServer {
     }
 
     public void start() {
-        System.out.println("Starting proxy server...");
+        Main.logger.logln("Starting proxy server...");
     }
 
     public void stop() {
-        System.out.println("Stopping proxy server...");
+        Main.logger.logln("Stopping proxy server...");
     }
 }
