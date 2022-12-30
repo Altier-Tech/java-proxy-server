@@ -31,6 +31,11 @@ public class PropertiesHandler {
         this.propertyName = propertyName;
     }
 
+    /**
+     * 
+     * @return the PropertiesHandler instance with the loaded properties
+     * @throws IOException if the properties file is not found or cannot be read
+     */
     public PropertiesHandler loadProperties() throws IOException {
         log("Loading  properties: " + propertyName);
         config = new Properties();
