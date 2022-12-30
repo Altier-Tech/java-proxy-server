@@ -31,7 +31,7 @@ public class Main {
         try {
             applicationProperties = new PropertiesHandler("application").loadProperties();
         } catch (IOException e) {
-            logger.log("Error loading application properties: " + e.getMessage());
+            logger.logln("Error loading application properties: " + e.getMessage());
             // Create a new properties file
         }
     }
