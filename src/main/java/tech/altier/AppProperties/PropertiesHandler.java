@@ -15,7 +15,7 @@ public class PropertiesHandler {
         this.propertyName = propertyName;
     }
 
-    private void loadProperties() throws IOException {
+    public void loadProperties() throws IOException {
         log("Loading  properties: " + propertyName);
         config = new Properties();
         InputStream inputStream = PropertiesLoader.class
