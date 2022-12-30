@@ -6,6 +6,7 @@ import tech.altier.Logger.LogManager;
 import tech.altier.Logger.LoggerType;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static LogManager logger;
@@ -24,6 +25,15 @@ public class Main {
 
         // Exit
         storeApplicationProperties();
+    }
+
+    private static void listenForStopCommand() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        while (!input.equals("stop")) {
+            input = scanner.nextLine();
+        }
+        server.stop();
     }
 
     private static void storeApplicationProperties() {
