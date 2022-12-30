@@ -42,6 +42,15 @@ public class PropertiesHandler {
         }
     }
 
+    public String get(String key) {
+        return config.getProperty(key);
+    }
+
+    public void set(String key, String value) {
+        log("Setting " + key + " in application properties...");
+        config.setProperty(key, value);
+    }
+
     private static void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
