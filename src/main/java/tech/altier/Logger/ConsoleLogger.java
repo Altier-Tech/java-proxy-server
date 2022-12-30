@@ -9,7 +9,7 @@ class ConsoleLogger implements Logger {
                 LogManager.getColor(Thread.currentThread().getName()) +
                 "T(" +
                 Thread.currentThread().getName() +
-                ")\tM(" +
+                ")\tC(" +
                 LogManager.getClassName() +
                 ")\t" +
                 message
@@ -22,7 +22,7 @@ class ConsoleLogger implements Logger {
                 LogManager.getColor(Thread.currentThread().getName()) +
                 "T(" +
                 Thread.currentThread().getName() +
-                ")\tM(" +
+                ")\tC(" +
                 LogManager.getClassName() +
                 ")\t" +
                 message
