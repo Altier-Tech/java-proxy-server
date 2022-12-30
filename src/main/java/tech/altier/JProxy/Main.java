@@ -20,6 +20,7 @@ public class Main {
         // Start the proxy server
         server = ProxyServer.getInstance();
         server.start();
+        listenForStopCommand();
 
         // Exit
         storeApplicationProperties();
