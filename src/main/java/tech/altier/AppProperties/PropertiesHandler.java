@@ -99,6 +99,6 @@ public class PropertiesHandler {
     }
 
     private static void log(String message) {
-        Main.logger.log(message);
+        Main.logger.logln(message);
     }
 }
