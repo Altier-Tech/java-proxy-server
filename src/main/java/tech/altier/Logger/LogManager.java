@@ -16,15 +16,9 @@ public class LogManager {
 
     public LogManager(LoggerType type) {
         switch (type) {
-            case CONSOLE:
-                logger = new ConsoleLogger();
-                break;
-            case FILE:
-                logger = new FileLogger();
-                break;
-            case BOTH:
-                logger = new DualLogger();
-                break;
+            case CONSOLE -> logger = new ConsoleLogger();
+            case FILE -> logger = new FileLogger();
+            case BOTH -> logger = new DualLogger();
         }
     }
 
