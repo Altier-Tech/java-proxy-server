@@ -1,7 +1,6 @@
 package tech.altier.JProxy.core;
 
 import tech.altier.JProxy.Main;
-import tech.altier.Thread.ThreadColor;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -41,7 +40,7 @@ public class RequestHandler implements Runnable {
             // TODO : Handle request
             String response = "HTTP/1.1 200 OK\r\n\r\n";
 
-            
+
             clientOut.writeBytes(response);
             clientOut.flush();
 
