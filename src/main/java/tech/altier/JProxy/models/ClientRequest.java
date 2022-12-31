@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.net.SocketException;
 
 public class ClientRequest {
     HttpMethod method;
@@ -15,10 +14,10 @@ public class ClientRequest {
 
     String requestBody;
 
-    public ClientRequest() {
+    private ClientRequest() {
     }
 
-    public ClientRequest(HttpMethod method, String endpoint, String version, String body) {
+    private ClientRequest(HttpMethod method, String endpoint, String version, String body) {
         this.method = method;
         this.endpoint = endpoint;
         this.version = version;
@@ -45,7 +44,7 @@ public class ClientRequest {
                 }
             }
 
-
+            requestBody = requestBodyBuilder.toString();
         } catch (Exception e) {
             Main.logger.error(e.getMessage());
         }
