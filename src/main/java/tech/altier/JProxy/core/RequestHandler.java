@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 
 public class RequestHandler implements Runnable {
@@ -41,6 +42,8 @@ public class RequestHandler implements Runnable {
                         requestFromClient.getEndpoint()
                 )).send();
             }
+
+            
 
             // TODO : Send response
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
