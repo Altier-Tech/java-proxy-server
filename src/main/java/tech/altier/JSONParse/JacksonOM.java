@@ -13,7 +13,7 @@ public class JacksonOM {
         return mapper.readValue(inputString, ClientRequest.class);
     }
 
-    public static Map<String, String> mapStringToJSON(String input) throws IOException {
+    public static Map<String, String> mapStringToMap(String input) throws IOException {
         return new ObjectMapper().readValue(input.getBytes(), new TypeReference<Map<String,String>>(){});
     }
 }
