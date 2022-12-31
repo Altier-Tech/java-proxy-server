@@ -12,6 +12,8 @@ public class ClientRequest {
     String version;
     String body;
 
+    public ClientRequest() {}
+
     private ClientRequest(HttpMethod method, String endpoint, String version, String body) {
         this.method = method;
         this.endpoint = endpoint;
