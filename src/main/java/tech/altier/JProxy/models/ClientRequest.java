@@ -75,7 +75,7 @@ public class ClientRequest {
 
     private static ClientRequest parseBodyAndPopulate(String requestBody) {
         try {
-            JacksonOM.mapJSON(requestBody);
+            JacksonOM.mapStringToJSON(requestBody);
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
