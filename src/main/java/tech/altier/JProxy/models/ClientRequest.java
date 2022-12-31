@@ -22,7 +22,7 @@ public class ClientRequest {
         this.method = method;
         this.endpoint = endpoint;
         this.version = version;
-        this.body = body;
+        this.requestBody = body;
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
