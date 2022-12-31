@@ -76,7 +76,7 @@ public class ClientRequest {
 
     private static ClientRequest parseBodyAndPopulate(String requestBody) {
         try {
-            GETRequest request = JacksonOM.parseGETRequest(requestBody);
+            ClientRequest request = JacksonOM.parseClientRequest(requestBody);
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
