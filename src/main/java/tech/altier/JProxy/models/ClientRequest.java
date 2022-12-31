@@ -1,6 +1,7 @@
 package tech.altier.JProxy.models;
 
 import tech.altier.JProxy.Main;
+import tech.altier.JProxy.http.GETRequest;
 import tech.altier.JSONParse.JacksonOM;
 
 import java.io.BufferedReader;
@@ -75,7 +76,7 @@ public class ClientRequest {
 
     private static ClientRequest parseBodyAndPopulate(String requestBody) {
         try {
-            JacksonOM.mapStringToJSON(requestBody);
+            GETRequest request = JacksonOM.parseGETRequest(requestBody);
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
