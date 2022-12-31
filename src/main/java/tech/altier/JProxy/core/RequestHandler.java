@@ -43,7 +43,7 @@ public class RequestHandler implements Runnable {
                 )).send();
             }
 
-            
+
 
             // TODO : Send response
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
