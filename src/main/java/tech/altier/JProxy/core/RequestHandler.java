@@ -44,6 +44,7 @@ public class RequestHandler implements Runnable {
                 )).send();
             }
 
+            assert responseFromServer != null;
             String response = new Response(responseFromServer).build();
 
             // TODO : Send response
