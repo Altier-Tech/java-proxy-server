@@ -41,7 +41,7 @@ public class RequestHandler implements Runnable {
                 while(true) {
                     String line = clientIn.readLine();
                     if (line.isBlank() || line.isEmpty()) break;
-                    Main.logger.error(line);
+                    Main.logger.logln(line);
                 }
             } catch (Exception ignored) {}
 
