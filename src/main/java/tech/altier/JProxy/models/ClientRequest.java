@@ -3,18 +3,12 @@ package tech.altier.JProxy.models;
 import tech.altier.JProxy.Main;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.Socket;
 
 public class ClientRequest {
     HttpMethod method;
     String endpoint;
     String version;
     String body;
-
-    private ClientRequest() {
-    }
 
     private ClientRequest(HttpMethod method, String endpoint, String version, String body) {
         this.method = method;
