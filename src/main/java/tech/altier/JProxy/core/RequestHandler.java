@@ -29,7 +29,9 @@ public class RequestHandler implements Runnable {
 
 
             String request = clientIn.readLine();
+            String method = request.split(" ");
 
+            /*
             String[] requestParts = request.split(" ");
             String method = requestParts[0];
             String url = requestParts[1];
@@ -39,7 +41,6 @@ public class RequestHandler implements Runnable {
             Main.logger.logln("URL: " + url);
             Main.logger.logln("Version: " + version);
 
-            /*
             try {
                 while(true) {
                     String line = clientIn.readLine();
