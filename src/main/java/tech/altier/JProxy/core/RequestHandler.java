@@ -2,6 +2,7 @@ package tech.altier.JProxy.core;
 
 import tech.altier.JProxy.Main;
 import tech.altier.JProxy.http.GETRequest;
+import tech.altier.JProxy.http.Response;
 import tech.altier.JProxy.models.ClientRequest;
 import tech.altier.JProxy.models.HttpMethod;
 
@@ -43,10 +44,10 @@ public class RequestHandler implements Runnable {
                 )).send();
             }
 
-
+            String response = new Response(responseFromServer).build();
 
             // TODO : Send response
-            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
+//            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
 
             clientOut.writeBytes(response);
             clientOut.flush();
