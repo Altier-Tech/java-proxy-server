@@ -26,14 +26,29 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
-        // TODO get request body
+        int contentLength = 0;
+        String requestBody;
         try {
-            while(true) {
-                String line = clientInput.readLine();
-                if (line == null) break;
-                Main.logger.error(line);
+            String line;
+            while (!(line = clientInput.readLine()).isBlank()) {
+                if (line.toLowerCase().startsWith("content-length")) {
+                    contentLength = Integer.parseInt(line.split(":")[1].trim());
+                }
             }
-        } catch (Exception ignored) {}
+
+            StringBuilder requestBodyBuilder = new StringBuilder();
+            if (contentLength > 0) {
+                int read;
+                while ((read = clientInput.read()) != -1) {
+                    requestBodyBuilder.append((char) read);
+                    if (requestBodyBuilder.length() == contentLength) break;
+                }
+            }
+
+
+        } catch (Exception e) {
+            Main.logger.error(e.getMessage());
+        }
 
         return new ClientRequest(
 
