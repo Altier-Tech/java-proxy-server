@@ -1,7 +1,6 @@
 package tech.altier.JProxy.models;
 
 import tech.altier.JProxy.Main;
-import tech.altier.JProxy.http.GETRequest;
 import tech.altier.JSONParse.JacksonOM;
 
 import java.io.BufferedReader;
