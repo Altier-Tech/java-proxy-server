@@ -17,6 +17,31 @@ public class ClientRequest {
         this.body = body;
     }
 
+    public HttpMethod getMethod() {
+        return method;
+    }
+    public void setMethod(HttpMethod method) {
+        this.method = method;
+    }
+    public String getEndpoint() {
+        return endpoint;
+    }
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
+    }
+    public String getVersion() {
+        return version;
+    }
+    public void setVersion(String version) {
+        this.version = version;
+    }
+    public String getBody() {
+        return body;
+    }
+    public void setBody(String body) {
+        this.body = body;
+    }
+
     public static ClientRequest parseRequest(BufferedReader clientInput) {
         String requestBody = null;
         try {
@@ -53,37 +78,5 @@ public class ClientRequest {
                 "HTTP/1.1",
                 requestBody
         );
-    }
-
-    public HttpMethod getMethod() {
-        return method;
-    }
-
-    public void setMethod(HttpMethod method) {
-        this.method = method;
-    }
-
-    public String getEndpoint() {
-        return endpoint;
-    }
-
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-    }
-
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
     }
 }
