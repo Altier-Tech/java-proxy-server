@@ -2,7 +2,6 @@ package tech.altier.JSONParse;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import tech.altier.JProxy.http.GETRequest;
 import tech.altier.JProxy.models.ClientRequest;
 
 import java.io.IOException;
