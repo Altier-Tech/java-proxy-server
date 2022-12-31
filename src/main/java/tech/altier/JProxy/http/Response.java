@@ -18,9 +18,10 @@ public class Response {
     }
 
     public String build() {
-        StringBuilder responseBuilder = new StringBuilder();
-        responseBuilder.append(version).append(" ").append(statusCode).append("\r\n\r\n");
-        responseBuilder.append(body);
-        return responseBuilder.toString();
+        if (statusCode == 200) {
+            return "HTTP/1.1 200 OK\r\n\r\n" + body;
+        } else {
+            return "HTTP/1.1 404 Not Found\r\n\r\n";
+        }
     }
 }
