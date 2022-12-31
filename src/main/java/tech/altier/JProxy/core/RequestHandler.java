@@ -33,16 +33,17 @@ public class RequestHandler implements Runnable {
             // TODO : Handle request
             ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
 
+            HttpResponse<String> responseFromServer = null;
+
             // If the request is GET
             if (requestFromClient.getMethod() == HttpMethod.GET) {
-                HttpResponse<String> responseFromServer = (new GETRequest(
+                responseFromServer = (new GETRequest(
                         requestFromClient.getEndpoint()
                 )).send();
-                System.out.println(responseFromServer);
             }
 
             // TODO : Send response
-            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
+            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
 
             clientOut.writeBytes(response);
             clientOut.flush();
