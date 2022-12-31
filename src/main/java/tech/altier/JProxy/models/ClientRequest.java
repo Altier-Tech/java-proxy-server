@@ -45,7 +45,7 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static ClientRequest parseRequest(BufferedReader clientInput) {
+    public static ClientRequest parseRequest(BufferedReader clientInput) throws IOException {
         String requestBody = null;
         try {
             int contentLength = 0;
