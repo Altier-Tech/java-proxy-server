@@ -32,7 +32,6 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
 
-            // TODO : Handle request
             ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
 
             HttpResponse<String> responseFromServer = null;
@@ -42,13 +41,12 @@ public class RequestHandler implements Runnable {
                 responseFromServer = (new GETRequest(
                         requestFromClient.getEndpoint()
                 )).send();
+            } else if (requestFromClient.getMethod() == HttpMethod.POST) {
+                // TODO : Implement POST request
             }
 
             assert responseFromServer != null;
             String response = new Response(responseFromServer).build();
-
-            // TODO : Send response
-//            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove this
 
             clientOut.writeBytes(response);
             clientOut.flush();
