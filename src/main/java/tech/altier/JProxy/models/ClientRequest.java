@@ -79,10 +79,10 @@ public class ClientRequest {
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
-        
+
         return new ClientRequest(
                 HttpMethod.GET,
-                "/",
+                "www.google.lk",
                 "HTTP/1.1",
                 requestBody
         );
