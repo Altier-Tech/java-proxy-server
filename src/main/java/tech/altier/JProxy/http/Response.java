@@ -3,6 +3,7 @@ package tech.altier.JProxy.http;
 import java.net.http.HttpResponse;
 
 public class Response {
+    // Have set HTTP/1.1 as default
     private final int statusCode;
     private final String body;
 
