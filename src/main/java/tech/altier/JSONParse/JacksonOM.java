@@ -7,11 +7,8 @@ import java.io.IOException;
 import java.util.Map;
 
 public class JacksonOM {
-    public static void mapJSON(String input) throws IOException {
+    public static void mapStringToJSON(String input) throws IOException {
         byte[] mapData = input.getBytes();
         Map<String,String> myMap = new ObjectMapper().readValue(mapData, new TypeReference<Map<String,String>>(){});
-        System.out.println(
-                myMap.get("hello")
-        );
     }
 }
