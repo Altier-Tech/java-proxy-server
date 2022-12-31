@@ -17,8 +17,10 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
+        String method, endpoint, version;
+
         return new ClientRequest(
-                
+
         );
     }
 
