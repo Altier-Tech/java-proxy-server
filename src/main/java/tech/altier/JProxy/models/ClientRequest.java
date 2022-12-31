@@ -22,6 +22,8 @@ public class ClientRequest {
         String url = requestParts[1];
         String version = requestParts[2];
 
+        String body = clientInput.readLine()
+
         return new ClientRequest(
 
         );
