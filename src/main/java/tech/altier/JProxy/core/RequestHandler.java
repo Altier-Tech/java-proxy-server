@@ -27,33 +27,11 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
 
-            String request = clientIn.readLine();
-
-            String[] requestParts = request.split(" ");
-            String method = requestParts[0];
-            String url = requestParts[1];
-            String version = requestParts[2];
-
-            Main.logger.logln("Method: " + method);
-            Main.logger.logln("URL: " + url);
-            Main.logger.logln("Version: " + version);
-
-/*
-            try {
-                while(true) {
-                    String line = clientIn.readLine();
-                    if (line.isBlank() || line.isEmpty()) break;
-                    Main.logger.logln(line);
-                }
-            } catch (Exception ignored) {}
-*/
 
             // TODO : Handle request
 
-            // If the request is GET
-            if (method.equalsIgnoreCase("GET")) {
-                ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
-            }
+            ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
+            
 
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
 
