@@ -29,7 +29,7 @@ public class RequestHandler implements Runnable {
 
 
             String request = clientIn.readLine();
-            String method = request.split(" ");
+            String method = request.split(" ")[0];
 
             /*
             String[] requestParts = request.split(" ");
