@@ -11,6 +11,9 @@ public class ClientRequest {
 
     String body;
 
+    public ClientRequest() {
+    }
+
     public ClientRequest(HttpMethod method, String endpoint, String version, String body) {
         this.method = method;
         this.endpoint = endpoint;
@@ -21,7 +24,7 @@ public class ClientRequest {
     public static ClientRequest parseRequest(BufferedReader clientInput) {
         try {
             while(true) {
-                String line = clientIn.readLine();
+                String line = clientInput.readLine();
                 if (line.isBlank() || line.isEmpty()) break;
                 Main.logger.logln(line);
             }
