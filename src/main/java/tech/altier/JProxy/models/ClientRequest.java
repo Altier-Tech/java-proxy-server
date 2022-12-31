@@ -17,7 +17,10 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(String request, BufferedReader clientInput) {
-        String method, endpoint, version;
+        String[] requestParts = request.split(" ");
+        String method = requestParts[0];
+        String url = requestParts[1];
+        String version = requestParts[2];
 
         return new ClientRequest(
 
