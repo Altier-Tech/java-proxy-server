@@ -47,7 +47,12 @@ public class ClientRequest {
     }
 
     private static ClientRequest parseBodyAndPopulate(String requestBody) {
-        
+        return new ClientRequest(
+                HttpMethod.GET,
+                "/",
+                "HTTP/1.1",
+                requestBody
+        );
     }
 
     public HttpMethod getMethod() {
