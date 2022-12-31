@@ -16,13 +16,8 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static ClientRequest parseRequest(String request, BufferedReader clientInput) {
-        String[] requestParts = request.split(" ");
-        String method = requestParts[0];
-        String url = requestParts[1];
-        String version = requestParts[2];
-
-        String body = clientInput.readLine()
+    public static ClientRequest parseRequest(BufferedReader clientInput) {
+        
 
         return new ClientRequest(
 
