@@ -16,4 +16,8 @@ public class Response {
     public Response(HttpResponse<String> responseFromServer) {
         this(responseFromServer.version().toString(), responseFromServer.statusCode(), responseFromServer.body());
     }
+
+    public void build() {
+        
+    }
 }
