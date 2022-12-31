@@ -41,7 +41,7 @@ public class RequestHandler implements Runnable {
                         requestFromClient.getEndpoint()
                 )).send();
             } // TODO : Implement POST request
-            
+
             assert responseFromServer != null;
             String response = new Response(responseFromServer).build();
 
@@ -55,6 +55,5 @@ public class RequestHandler implements Runnable {
         } catch (Exception e) {
             Main.logger.logln(e.getMessage());
         }
-
     }
 }
