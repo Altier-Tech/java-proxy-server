@@ -80,4 +80,14 @@ public class ClientRequest {
     private static ClientRequest parseBodyAndPopulate(String requestBody) throws IOException {
         return JacksonOM.parseClientRequest(requestBody);
     }
+
+    @Override
+    public String toString() {
+        return "ClientRequest{" +
+                "method=" + method +
+                ", endpoint='" + endpoint + '\'' +
+                ", version='" + version + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
 }
