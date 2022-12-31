@@ -19,8 +19,6 @@ public class ClientRequest {
         this.endpoint = endpoint;
         this.version = version;
         this.body = body;
-
-        System.out.println(this);
     }
 
     public HttpMethod getMethod() {
