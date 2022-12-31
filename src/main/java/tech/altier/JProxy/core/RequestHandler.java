@@ -48,8 +48,7 @@ public class RequestHandler implements Runnable {
                     if (line.isBlank() || line.isEmpty()) break;
                     Main.logger.error(line);
                 }
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
 
             clientOut.writeBytes(response);
             clientOut.flush();
