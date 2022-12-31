@@ -1,5 +1,7 @@
 package tech.altier.JProxy.models;
 
+import tech.altier.JProxy.Main;
+
 import java.io.BufferedReader;
 
 public class ClientRequest {
@@ -17,7 +19,13 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
-        
+        try {
+            while(true) {
+                String line = clientIn.readLine();
+                if (line.isBlank() || line.isEmpty()) break;
+                Main.logger.logln(line);
+            }
+        } catch (Exception ignored) {}
 
         return new ClientRequest(
 
