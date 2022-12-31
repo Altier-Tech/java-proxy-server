@@ -46,7 +46,10 @@ public class RequestHandler implements Runnable {
 //            } catch (Exception ignored) {}
 
             // TODO : Handle request
-            String response = "HTTP/1.1 200 OK\r\n\r\n";
+
+            
+
+            String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
 
             clientOut.writeBytes(response);
             clientOut.flush();
