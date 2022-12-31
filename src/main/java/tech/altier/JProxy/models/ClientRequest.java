@@ -16,7 +16,7 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static ClientRequest parseRequest(BufferedReader clientInput) {
+    public static ClientRequest parseRequest(String request, BufferedReader clientInput) {
         String method, endpoint, version;
 
         return new ClientRequest(
