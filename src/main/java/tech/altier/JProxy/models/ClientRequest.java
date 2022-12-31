@@ -11,8 +11,7 @@ public class ClientRequest {
     HttpMethod method;
     String endpoint;
     String version;
-
-    String requestBody;
+    String body;
 
     private ClientRequest() {
     }
@@ -21,7 +20,7 @@ public class ClientRequest {
         this.method = method;
         this.endpoint = endpoint;
         this.version = version;
-        this.requestBody = body;
+        this.body = body;
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
