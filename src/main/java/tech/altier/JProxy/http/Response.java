@@ -17,7 +17,10 @@ public class Response {
         this(responseFromServer.version().toString(), responseFromServer.statusCode(), responseFromServer.body());
     }
 
-    public void build() {
-        
+    public String build() {
+        StringBuilder responseBuilder = new StringBuilder();
+        responseBuilder.append(version).append(" ").append(statusCode).append("\r\n\r\n");
+        responseBuilder.append(body);
+        return responseBuilder.toString();
     }
 }
