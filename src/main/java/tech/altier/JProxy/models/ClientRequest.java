@@ -46,6 +46,10 @@ public class ClientRequest {
         return parseBodyAndPopulate(requestBody);
     }
 
+    private static ClientRequest parseBodyAndPopulate(String requestBody) {
+        
+    }
+
     public HttpMethod getMethod() {
         return method;
     }
