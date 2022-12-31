@@ -1,6 +1,6 @@
 package tech.altier.JProxy.models;
 
-enum HttpMethod {
+public enum HttpMethod {
     GET,
     POST,
     PUT,
