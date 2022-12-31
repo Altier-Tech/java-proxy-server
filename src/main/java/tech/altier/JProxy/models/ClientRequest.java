@@ -60,5 +60,35 @@ public class ClientRequest {
         return new ClientRequest(httpMethod, endPoint, version, requestBody);
     }
 
-    
+    public HttpMethod getMethod() {
+        return method;
+    }
+
+    public void setMethod(HttpMethod method) {
+        this.method = method;
+    }
+
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
 }
