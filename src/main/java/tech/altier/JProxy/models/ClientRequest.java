@@ -17,7 +17,7 @@ public class ClientRequest {
     }
 
     public static void parseRequest(BufferedReader clientInput) {
-        
+
     }
 
 }
