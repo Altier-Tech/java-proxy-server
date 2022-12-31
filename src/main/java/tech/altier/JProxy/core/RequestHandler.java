@@ -37,8 +37,6 @@ public class RequestHandler implements Runnable {
 
             HttpResponse<String> responseFromServer = null;
 
-            System.out.println(requestFromClient.getMethod() + " " + requestFromClient.getEndpoint());
-
             // If the request is GET
             if (requestFromClient.getMethod() == HttpMethod.GET) {
                 responseFromServer = (new GETRequest(
