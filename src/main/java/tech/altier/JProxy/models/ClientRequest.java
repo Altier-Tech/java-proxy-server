@@ -16,8 +16,8 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static parseRequest(BufferedReader clientInput) {
-        clientInput.
+    public static void parseRequest(BufferedReader clientInput) {
+        
     }
 
 }
