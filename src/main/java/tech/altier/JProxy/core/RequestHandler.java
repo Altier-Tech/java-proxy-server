@@ -28,14 +28,15 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
 
-
             // TODO : Handle request
-
             ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
+
             // If the request is GET
             if (requestFromClient.getMethod() == HttpMethod.GET) {
+                Main.logger.error(requestFromClient.getBody());
             }
 
+            // TODO : Send response
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
 
             clientOut.writeBytes(response);
