@@ -25,10 +25,20 @@ public class ClientRequest {
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
         int contentLength = 0;
-        String requestBody;
+        String method = null, endPoint = null, version = null, requestBody = null;
+        HttpMethod httpMethod;
         try {
             String line;
             while (!(line = clientInput.readLine()).isBlank()) {
+                // Set method, endpoint and version
+                if (line.startsWith("GET") || line.startsWith("POST")) {
+                    String[] requestParts = line.split(" ");
+                    method = requestParts[0];
+                    endPoint = requestParts[1];
+                    version = requestParts[2];
+                }
+
+                // Set content length
                 if (line.toLowerCase().startsWith("content-length")) {
                     contentLength = Integer.parseInt(line.split(":")[1].trim());
                 }
@@ -48,8 +58,11 @@ public class ClientRequest {
             Main.logger.error(e.getMessage());
         }
 
-        return new ClientRequest(
+        assert method != null;
+        if (method.equalsIgnoreCase("GET")) httpMethod = HttpMethod.GET;
+        else if (method.equalsIgnoreCase("POST")) httpMethod = HttpMethod.POST;
+        else httpMethod = HttpMethod.UNKNOWN;
 
-        );
+        return new ClientRequest(httpMethod, endPoint, version, requestBody);
     }
 }
