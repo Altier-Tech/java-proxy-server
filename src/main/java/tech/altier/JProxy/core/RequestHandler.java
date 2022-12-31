@@ -2,6 +2,7 @@ package tech.altier.JProxy.core;
 
 import tech.altier.JProxy.Main;
 import tech.altier.JProxy.models.ClientRequest;
+import tech.altier.JProxy.models.HttpMethod;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -32,7 +33,7 @@ public class RequestHandler implements Runnable {
 
             ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
             // If the request is GET
-            if (requestFromClient.getMethod.equalsIgnoreCase("GET")) {
+            if (requestFromClient.getMethod == HttpMethod.GET) {
             }
 
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
