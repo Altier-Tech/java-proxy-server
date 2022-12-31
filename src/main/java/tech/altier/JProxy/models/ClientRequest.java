@@ -1,5 +1,7 @@
 package tech.altier.JProxy.models;
 
+import java.io.BufferedReader;
+
 public class ClientRequest {
     HttpMethod method;
     String endpoint;
@@ -14,8 +16,8 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static parseRequest() {
-        
-    }
+//    public static parseRequest(BufferedReader clientInput) {
+//        clientInput.
+//    }
 
 }
