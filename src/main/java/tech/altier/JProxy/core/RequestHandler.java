@@ -27,6 +27,7 @@ public class RequestHandler implements Runnable {
             BufferedReader clientIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             DataOutputStream clientOut = new DataOutputStream(clientSocket.getOutputStream());
 
+            /*
             String request = clientIn.readLine();
 
             String[] requestParts = request.split(" ");
@@ -45,6 +46,7 @@ public class RequestHandler implements Runnable {
                     Main.logger.logln(line);
                 }
             } catch (Exception ignored) {}
+            */
 
             // TODO : Handle request
 
