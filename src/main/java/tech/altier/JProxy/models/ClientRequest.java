@@ -22,6 +22,7 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
+        // TODO get request body
         try {
             while(true) {
                 String line = clientInput.readLine();
