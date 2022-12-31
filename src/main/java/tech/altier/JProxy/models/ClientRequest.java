@@ -40,8 +40,7 @@ public class ClientRequest {
         );
     }
 
-    public void getClientRequest(Socket client) throws IOException, SocketException {
-        System.out.println("Debug: got new client " + client.toString());
+    public void getClientRequest(Socket client) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream(), "UTF-8"));
 
         StringBuilder requestBuilder = new StringBuilder();
@@ -49,7 +48,7 @@ public class ClientRequest {
         int contectLegnth = 0;
 
         while (!(line = br.readLine()).isBlank()) {
-            requestBuilder.append(line + "\r\n");
+            requestBuilder.append(line).append("\r\n");
             if (line.toLowerCase().startsWith("content-length")) {
                 contectLegnth = Integer.parseInt(line.split(":")[1].trim());
             }
@@ -64,7 +63,7 @@ public class ClientRequest {
                 if (requestBodyBuilder.length() == contectLegnth)
                     break;
             }
-            requestBuilder.append("\r\n" + requestBodyBuilder);
+            requestBuilder.append("\r\n").append(requestBodyBuilder);
         }
 
         requestBody = requestBodyBuilder.toString();
