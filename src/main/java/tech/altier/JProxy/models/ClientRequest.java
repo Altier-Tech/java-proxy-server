@@ -30,8 +30,8 @@ public class ClientRequest {
         try {
             while(true) {
                 String line = clientInput.readLine();
-                if (line.isBlank() || line.isEmpty()) break;
-                Main.logger.logln(line);
+                if (line == null) break;
+                Main.logger.error(line);
             }
         } catch (Exception ignored) {}
 
@@ -46,15 +46,6 @@ public class ClientRequest {
         StringBuilder requestBuilder = new StringBuilder();
         String line;
         int contentLength = 0;
-
-        /*
-        while (!(line = br.readLine()).isBlank()) {
-            requestBuilder.append(line).append("\r\n");
-            if (line.toLowerCase().startsWith("content-length")) {
-                contectLegnth = Integer.parseInt(line.split(":")[1].trim());
-            }
-        }
-        */
 
         while (true) {
             line = br.readLine();
