@@ -31,7 +31,9 @@ public class RequestHandler implements Runnable {
             // TODO : Handle request
 
             ClientRequest requestFromClient = ClientRequest.parseRequest(clientIn);
-            
+            // If the request is GET
+            if (requestFromClient.getMethod.equalsIgnoreCase("GET")) {
+            }
 
             String response = "HTTP/1.1 200 OK\r\n\r\n"; // TODO remove
 
