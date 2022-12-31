@@ -14,8 +14,8 @@ public class ClientRequest {
         this.body = body;
     }
 
-    public static readRequest() {
-        // TODO : Read request from client
+    public static parseRequest() {
+        
     }
 
 }
