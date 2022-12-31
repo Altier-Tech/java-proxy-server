@@ -13,7 +13,7 @@ public class ClientRequest {
     String endpoint;
     String version;
 
-    String body;
+    String requestBody;
 
     public ClientRequest() {
     }
@@ -40,7 +40,7 @@ public class ClientRequest {
         );
     }
 
-    public static String getClientRequest(Socket client) throws IOException, SocketException {
+    public void getClientRequest(Socket client) throws IOException, SocketException {
         System.out.println("Debug: got new client " + client.toString());
         BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream(), "UTF-8"));
 
@@ -67,6 +67,6 @@ public class ClientRequest {
             requestBuilder.append("\r\n" + requestBodyBuilder);
         }
 
-        return requestBuilder.toString();
+        requestBody = requestBodyBuilder.toString();
     }
 }
