@@ -17,7 +17,9 @@ public class ClientRequest {
     }
 
     public static ClientRequest parseRequest(BufferedReader clientInput) {
-
+        return new ClientRequest(
+                
+        );
     }
 
 }
