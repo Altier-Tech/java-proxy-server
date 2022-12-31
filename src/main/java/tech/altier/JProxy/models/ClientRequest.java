@@ -52,34 +52,4 @@ public class ClientRequest {
 
         );
     }
-
-    public void getClientRequest(Socket client) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream(), "UTF-8"));
-
-        StringBuilder requestBuilder = new StringBuilder();
-        String line;
-        int contentLength = 0;
-
-        while (true) {
-            line = br.readLine();
-            if (line == null) break;
-            requestBuilder.append(line).append("\r\n");
-            if (line.toLowerCase().startsWith("content-length")) {
-                contentLength = Integer.parseInt(line.split(":")[1].trim());
-            }
-        }
-
-        StringBuilder requestBodyBuilder = new StringBuilder();
-        if (contentLength > 0) {
-            int read;
-            while ((read = br.read()) != -1) {
-                requestBodyBuilder.append((char) read);
-                if (requestBodyBuilder.length() == contentLength)
-                    break;
-            }
-            requestBuilder.append("\r\n").append(requestBodyBuilder);
-        }
-
-        requestBody = requestBodyBuilder.toString();
-    }
 }
