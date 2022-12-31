@@ -40,6 +40,16 @@ public class RequestHandler implements Runnable {
             // TODO : Handle request
             String response = "HTTP/1.1 200 OK\r\n\r\n";
 
+            for (String e: requestParts) Main.logger.error(e);
+
+            try {
+                while(true) {
+                    String line = clientIn.readLine();
+                    if (line.isBlank() || line.isEmpty()) break;
+                    Main.logger.error(line);
+                }
+            } catch (Exception ignored) {
+            }
 
             clientOut.writeBytes(response);
             clientOut.flush();
