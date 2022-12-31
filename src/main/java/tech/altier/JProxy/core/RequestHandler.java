@@ -10,7 +10,6 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 
 public class RequestHandler implements Runnable {
@@ -41,10 +40,8 @@ public class RequestHandler implements Runnable {
                 responseFromServer = (new GETRequest(
                         requestFromClient.getEndpoint()
                 )).send();
-            } else if (requestFromClient.getMethod() == HttpMethod.POST) {
-                // TODO : Implement POST request
-            }
-
+            } // TODO : Implement POST request
+            
             assert responseFromServer != null;
             String response = new Response(responseFromServer).build();
 
