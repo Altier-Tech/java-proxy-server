@@ -38,13 +38,13 @@ public class RequestHandler implements Runnable {
             Main.logger.logln("URL: " + url);
             Main.logger.logln("Version: " + version);
 
-//            try {
-//                while(true) {
-//                    String line = clientIn.readLine();
-//                    if (line.isBlank() || line.isEmpty()) break;
-//                    Main.logger.logln(line);
-//                }
-//            } catch (Exception ignored) {}
+            try {
+                while(true) {
+                    String line = clientIn.readLine();
+                    if (line.isBlank() || line.isEmpty()) break;
+                    Main.logger.logln(line);
+                }
+            } catch (Exception ignored) {}
 
             // TODO : Handle request
 
