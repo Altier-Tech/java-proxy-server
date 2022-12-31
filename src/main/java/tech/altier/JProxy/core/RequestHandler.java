@@ -1,6 +1,7 @@
 package tech.altier.JProxy.core;
 
 import tech.altier.JProxy.Main;
+import tech.altier.JProxy.http.GETRequest;
 import tech.altier.JProxy.models.ClientRequest;
 import tech.altier.JProxy.models.HttpMethod;
 
@@ -8,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
+import java.net.http.HttpResponse;
 
 public class RequestHandler implements Runnable {
     private final Socket clientSocket;
@@ -33,7 +35,7 @@ public class RequestHandler implements Runnable {
 
             // If the request is GET
             if (requestFromClient.getMethod() == HttpMethod.GET) {
-                Main.logger.error(requestFromClient.getBody());
+                HttpResponse<String> responseFromServer = new
             }
 
             // TODO : Send response
