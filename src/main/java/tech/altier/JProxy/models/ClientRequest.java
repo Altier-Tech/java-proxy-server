@@ -45,22 +45,32 @@ public class ClientRequest {
 
         StringBuilder requestBuilder = new StringBuilder();
         String line;
-        int contectLegnth = 0;
+        int contentLength = 0;
 
+        /*
         while (!(line = br.readLine()).isBlank()) {
             requestBuilder.append(line).append("\r\n");
             if (line.toLowerCase().startsWith("content-length")) {
                 contectLegnth = Integer.parseInt(line.split(":")[1].trim());
             }
         }
+        */
 
+        while (true) {
+            line = br.readLine();
+            if (line == null) break;
+            requestBuilder.append(line).append("\r\n");
+            if (line.toLowerCase().startsWith("content-length")) {
+                contentLength = Integer.parseInt(line.split(":")[1].trim());
+            }
+        }
 
         StringBuilder requestBodyBuilder = new StringBuilder();
-        if (contectLegnth > 0) {
+        if (contentLength > 0) {
             int read;
             while ((read = br.read()) != -1) {
                 requestBodyBuilder.append((char) read);
-                if (requestBodyBuilder.length() == contectLegnth)
+                if (requestBodyBuilder.length() == contentLength)
                     break;
             }
             requestBuilder.append("\r\n").append(requestBodyBuilder);
