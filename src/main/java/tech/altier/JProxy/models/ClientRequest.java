@@ -52,10 +52,7 @@ public class ClientRequest {
             Main.logger.error(e.getMessage());
         }
 
-        assert method != null;
-        if (method.equalsIgnoreCase("GET")) httpMethod = HttpMethod.GET;
-        else if (method.equalsIgnoreCase("POST")) httpMethod = HttpMethod.POST;
-        else httpMethod = HttpMethod.UNKNOWN;
+        parseBodyAndPopulate(requestBody);
 
         return new ClientRequest(httpMethod, endPoint, version, requestBody);
     }
