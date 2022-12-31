@@ -74,18 +74,7 @@ public class ClientRequest {
         return parseBodyAndPopulate(requestBody);
     }
 
-    private static ClientRequest parseBodyAndPopulate(String requestBody) {
-        try {
-            ClientRequest request = JacksonOM.parseClientRequest(requestBody);
-        } catch (IOException e) {
-            Main.logger.error(e.getMessage());
-        }
-
-        return new ClientRequest(
-                HttpMethod.GET,
-                "www.google.lk",
-                "HTTP/1.1",
-                requestBody
-        );
+    private static ClientRequest parseBodyAndPopulate(String requestBody) throws IOException {
+        return JacksonOM.parseClientRequest(requestBody);
     }
 }
