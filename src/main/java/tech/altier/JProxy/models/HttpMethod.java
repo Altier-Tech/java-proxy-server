@@ -8,5 +8,6 @@ enum HttpMethod {
     HEAD,
     OPTIONS,
     TRACE,
-    CONNECT
+    CONNECT,
+    UNKNOWN
 }
