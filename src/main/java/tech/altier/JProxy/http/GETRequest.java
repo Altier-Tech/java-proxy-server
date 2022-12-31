@@ -7,7 +7,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class GETRequest {
-    String endPoint;
+    private String endPoint;
 
     public GETRequest(String endPoint) {
         this.endPoint = endPoint;
