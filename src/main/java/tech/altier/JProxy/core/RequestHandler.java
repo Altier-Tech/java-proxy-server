@@ -40,7 +40,12 @@ public class RequestHandler implements Runnable {
                 responseFromServer = (new GETRequest(
                         requestFromClient.getEndpoint()
                 )).send();
-            } // TODO : Implement POST request
+            } // TODO : This should originally handle POST requests. I just patched it for now.
+            else if (requestFromClient.getMethod() == HttpMethod.POST) {
+                responseFromServer = (new GETRequest(
+                        requestFromClient.getEndpoint()
+                )).send();
+            }
 
             assert responseFromServer != null;
             String response = new Response(responseFromServer).build();

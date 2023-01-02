@@ -22,9 +22,6 @@
 # IntelliJ IDEA
 .idea/
 
-# Output
-target/
-
 # Logs
 logs/
 
