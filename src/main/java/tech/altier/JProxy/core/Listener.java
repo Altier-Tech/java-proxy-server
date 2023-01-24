@@ -13,7 +13,7 @@ public class Listener implements Runnable {
     public Listener(int port) {
         this.port = port;
         try {
-            serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(8000);
         } catch (IOException e) {
             Main.logger.logln("Error creating server socket: " + e.getMessage());
             throw new RuntimeException(e);
